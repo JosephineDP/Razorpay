@@ -1,0 +1,79 @@
+<!-- <div class="col-md-12">
+    <div class="card card-container">
+        <form #f="ngForm" >
+            <div class="form-group">
+                <div class="alert alert-danger" role="alert" *ngIf="error">Payment failed: {{ error }}</div>
+                <div class="alert alert-success" role="alert" *ngIf="paymentId">Payment Success. Payment ID: {{ paymentId }}</div>
+            </div>
+            <div class="form-group">
+                <label for="name">Name</label> <input type="text" class="form-control" name="name" formControlName="form.name" required minlength="3" maxlength="20" #name="ngModel" />
+                <div class="alert-danger" *ngIf="f.submitted && name.invalid">
+                    <div >Name is required</div>
+                    <div >Name must be at least 3 characters</div>
+                    <div >Name must be at most 20 characters</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label> <input type="text" class="form-control" name="email" formControlName="form.email" required #email="ngModel" />
+                <div class="alert alert-danger" role="alert" *ngIf="f.submitted && email.invalid">Email is required!</div>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone</label> <input type="number" class="form-control" name="phone" formControlName="form.phone" required minlength="10" maxlength="10"
+                    #phone="ngModel" />
+                <div class="alert alert-danger" role="alert" *ngIf="f.submitted && phone.invalid">
+                    <div >Phone is required</div>
+                    <div >Phone must be 10 digits</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="amount">Amount</label> <input type="number" class="form-control" name="amount" formControlName="form.amount" required #amount="ngModel" />
+                <div class="alert alert-danger" role="alert" *ngIf="f.submitted && amount.invalid">
+                    <div >Amount is required</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary btn-block">Pay</button>
+            </div>
+        </form>
+    </div>
+</div> -->
+
+<div>
+    <label>Customer Name:</label>
+    <input type="text" name="customerName" [(ngModel)]="paymentRequest.customerName" />
+</div>
+<div>
+    <label>Email:</label>
+    <input type="email" name="email" [(ngModel)]="paymentRequest.email" />
+</div>
+<div>
+    <label>Phone Number:</label>
+    <input type="tel" name="phoneNumber" [(ngModel)]="paymentRequest.phoneNumber" />
+</div>
+<div>
+    <label>Amount (INR):</label>
+    <input type="number" name="amount" [(ngModel)]="paymentRequest.amount" />
+</div>
+
+<button (click)="createRazorpayOrder()">Pay with Razorpay</button>
+
+<!-- <form >
+    <input type="text" formControlName="customerName" placeholder="Customer Name">
+    <input type="email" formControlName="email" placeholder="Email">
+    <input type="tel" formControlName="phoneNumber" placeholder="Phone Number">
+    <input type="number" formControlName="amount" placeholder="Amount">
+    <button (click)="createRazorpayOrder()">Pay with Razorpay</button> 
+</form> -->
+
+<!-- <form>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input type="email" class="form-control" aria-describedby="emailHelp">
+      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input type="password" class="form-control" >
+    </div>
+    <button  type="submit" class="btn btn-primary">Submit</button>
+  </form> -->
